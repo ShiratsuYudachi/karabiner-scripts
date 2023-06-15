@@ -1,0 +1,40 @@
+{
+  "title": "set abc as input when cmd+space",
+  "maintainers": [
+    "shiratsuyudachi"
+  ],
+  "rules": [
+    {
+      "description": "set abc as input when cmd+space",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+						"key_code": "spacebar",
+						"modifiers": {
+							"mandatory": [
+								"command"
+							],
+							"optional": [
+								"any"
+							]
+						}
+					},
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+              }
+            },
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

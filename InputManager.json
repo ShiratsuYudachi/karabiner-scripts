@@ -1,0 +1,96 @@
+{
+  "title": "Easy access to any input method!",
+  "maintainers": [
+    "shiratsuyudachi-tsuyue"
+  ],
+  "rules": [
+    {
+      "description": "Replace RCMD_alone with ctrl+space",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "key_code": "right_command"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Select Input With RCMD + NUM",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+						"key_code": "1",
+						"modifiers": {
+							"mandatory": [
+								"right_command"
+							]
+						}
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+						"key_code": "2",
+						"modifiers": {
+							"mandatory": [
+								"right_command"
+							]
+						}
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "com.apple.inputmethod.SCIM.ITABC"
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+						"key_code": "3",
+						"modifiers": {
+							"mandatory": [
+								"right_command"
+							]
+						}
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
